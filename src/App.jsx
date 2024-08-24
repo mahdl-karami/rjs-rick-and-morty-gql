@@ -1,7 +1,10 @@
-const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+import { useDispatch } from "react-redux";
+import { showMeState } from "./app/features/charectersSlice";
 
-export default App
+const App = () => {
+  const dispatch = useDispatch();
+  dispatch(showMeState());
+  return <div>App</div>;
+};
+
+export default App;
