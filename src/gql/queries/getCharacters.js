@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-export const GET_CHARACTERS = (page) => gql`
+export const GET_CHARACTERS = (page = 1) => gql`
   query getCharacters {
     characters(page: ${page}) {
       info {
@@ -8,8 +8,20 @@ export const GET_CHARACTERS = (page) => gql`
         next
         prev
       }
-      results {
+			results{
+        id
         name
+        image
+        status
+        species
+        location{
+          id
+          name
+        }
+        episode{
+          id
+          name
+        }
       }
     }
   }
