@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
-export const GET_CHARACTERS = gql`
+export const GET_CHARACTERS = (page) => gql`
   query getCharacters {
-    characters(page: 1) {
+    characters(page: ${page}) {
       info {
         count
         pages
