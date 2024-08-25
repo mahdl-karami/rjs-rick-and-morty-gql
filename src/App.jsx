@@ -1,6 +1,6 @@
 //? redux
 import { useDispatch } from "react-redux";
-import { showMeState } from "./app/features/charectersSlice";
+import { showMeState } from "./app/features/bookmarkSlice";
 //? apollo-gql
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "./gql/queries/getCharacters";

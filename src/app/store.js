@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 //! import reducers
-import charactersReducer from "./features/charectersSlice";
+import bookmarkReducer from "./features/bookmarkSlice";
 
 export const store = configureStore({
   reducer: {
-    characters: charactersReducer,
+    bookmarks: bookmarkReducer,
   },
 });
