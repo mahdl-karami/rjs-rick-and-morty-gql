@@ -17,7 +17,7 @@ const App = () => {
   console.log({ loading, data, error });
   return (
     <div>
-      <h3>All Characters</h3>
+      <h2 className="title">All Characters</h2>
       {loading ? <p>loading</p> : null}
       {error ? <p>error</p> : null}
       {data ? (
