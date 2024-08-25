@@ -1,10 +1,9 @@
-import heroImage from "/hero_image.png";
+import styles from "../styles/layout.module.css";
+
 const Header = () => {
   return (
-    <header>
-      <div></div>
+    <header className={styles.header}>
       <h1>The Rick and Morty API</h1>
-      <img src={heroImage} alt="Hero Image (Banner)" />
     </header>
   );
 };

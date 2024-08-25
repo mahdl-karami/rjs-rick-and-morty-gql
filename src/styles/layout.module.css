@@ -1,0 +1,48 @@
+.header {
+  min-height: 40vh;
+  background: url(/public/hero_image.png) center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: var(--mainBg);
+  }
+}
+.footer {
+  width: 100%;
+  padding: 5rem 0;
+  background: var(--footerBg);
+  color: var(--unknow);
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  bottom: 0;
+}
+.flex {
+  display: flex;
+  gap: 25px;
+}
+.me {
+  display: flex;
+  align-items: center;
+  a {
+    color: var(--unknow);
+    margin: 0 0.5rem;
+    text-decoration: none;
+    border-bottom: var(--secondText) solid 1px;
+    transition: all 0.3s linear;
+  }
+  a:hover {
+    color: var(--secondText);
+    border-bottom: 1px solid #ffffff00;
+  }
+}
+.icons {
+  a {
+    color: var(--unknow);
+  }
+}
