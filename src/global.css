@@ -4,9 +4,9 @@
   --mainBg: #272b33;
   --secondBg: #3c3e44;
   --footerBg: #202329;
-  --success: #008000;
-  --alert: #ff0000;
-  --unknow: #9e9e9e;
+  --success: #00cf00;
+  --danger: #ff0000;
+  --unknown: #9e9e9e;
 
   box-sizing: border-box;
 
@@ -26,7 +26,31 @@ body {
 a {
   color: var(--mainText);
   transition: color 0.3s linear;
+  text-decoration: none;
 }
 a:hover {
   color: var(--secondText) !important;
+}
+.characters {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1.5rem 1.5rem;
+  grid-template-areas: ". . .";
+}
+.alive {
+  color: var(--success);
+}
+.dead {
+  color: var(--danger);
+}
+.unknown {
+  color: var(--unknown);
+}
+.true {
+  svg {
+    color: var(--secondText);
+  }
 }

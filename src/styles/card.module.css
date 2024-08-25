@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: var(--secondBg);
+  overflow: hidden;
+  img {
+    width: 220px;
+    height: 220px;
+  }
+  svg {
+    font-size: 0.6em;
+    margin-right: 0.2rem;
+  }
+}
+.flex {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.fade {
+  opacity: 70%;
+}
+.bookmark {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s linear;
+  &:hover {
+    color: var(--secondText);
+  }
+}

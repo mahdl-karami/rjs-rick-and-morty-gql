@@ -5,6 +5,8 @@ import { showMeState } from "./app/features/bookmarkSlice";
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "./gql/queries/getCharacters";
 import CharacterCard from "./components/CharacterCard";
+//? style modules
+import cardS from "./styles/card.module.css";
 
 const App = () => {
   //! redux test
@@ -19,13 +21,13 @@ const App = () => {
       {loading ? <p>loading</p> : null}
       {error ? <p>error</p> : null}
       {data ? (
-        <>
+        <div className="characters">
           {data.characters.results.map((character, index) => (
-            <div key={index}>
+            <div key={index} className={cardS.card}>
               <CharacterCard character={character} />
             </div>
           ))}
-        </>
+        </div>
       ) : null}
     </div>
   );
