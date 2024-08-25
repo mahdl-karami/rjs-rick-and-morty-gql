@@ -11,39 +11,41 @@ const { footer, flex, me, icons } = styles;
 
 const Footer = () => {
   const { loading, error, data } = useQuery(GET_INFO);
-  //! loading
-  if (loading) <h1>loading</h1>;
-  //! error
-  if (error) <h1>{error}</h1>;
+
   //! jsx
-  if (data) {
-    return (
-      <footer className={footer}>
+  return (
+    <footer className={footer}>
+      {/* //! loading */}
+      {loading ? <p>loading</p> : null}
+      {/* //! error */}
+      {error ? <p>error</p> : null}
+      {/* //! success */}
+      {data ? (
         <div className={flex}>
           <p>characters : {data.characters.info.count}</p>
           <p>locations : {data.locations.info.count}</p>
           <p>episodes : {data.episodes.info.count}</p>
         </div>
-        <div className={flex + " " + icons}>
-          <a href="https://github.com/mahdl-karami">
-            <FaGithub />
-          </a>
-          <a href="https://www.instagram.com/mahdl.karami/">
-            <FaInstagram />
-          </a>
-          <a href="mailto: mo.mahdi.ka@gmail.com">
-            <MdOutlineAlternateEmail />
-          </a>
-        </div>
-        <p className={me}>
-          <FaCode />
-          by
-          <a href="#">Mahdi Karami</a>
-          2024
-        </p>
-      </footer>
-    );
-  }
+      ) : null}
+      <div className={flex + " " + icons}>
+        <a href="https://github.com/mahdl-karami">
+          <FaGithub />
+        </a>
+        <a href="https://www.instagram.com/mahdl.karami/">
+          <FaInstagram />
+        </a>
+        <a href="mailto: mo.mahdi.ka@gmail.com">
+          <MdOutlineAlternateEmail />
+        </a>
+      </div>
+      <p className={me}>
+        <FaCode />
+        by
+        <a href="#">Mahdi Karami</a>
+        2024
+      </p>
+    </footer>
+  );
 };
 
 export default Footer;
