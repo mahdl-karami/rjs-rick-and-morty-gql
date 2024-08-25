@@ -22,6 +22,10 @@ export const router = () => {
           path: "/episodes",
           element: <h1> episodes </h1>,
         },
+        {
+          path: "/bookmarks",
+          element: <h1> bookmarks </h1>,
+        },
       ],
     },
   ]);

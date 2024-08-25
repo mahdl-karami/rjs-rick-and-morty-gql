@@ -52,9 +52,11 @@
   top: 10px;
   right: 10px;
   font-size: 1.5em;
-  color: var(--mainBg);
   cursor: pointer;
   transition: all 0.3s linear;
+  a {
+    color: var(--mainBg);
+  }
   &:hover {
     color: var(--secondText);
   }
