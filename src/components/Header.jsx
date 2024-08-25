@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <span className={styles.bookmark}>
-        <Link>
+        <Link to='/bookmarks'>
           <FaRegBookmark />
         </Link>
       </span>
