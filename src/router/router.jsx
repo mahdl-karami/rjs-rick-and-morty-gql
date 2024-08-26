@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 //? import pages
 import App from "../App";
 import Layout from "../pages/Layout";
+import Bookmarks from "../pages/Bookmarks";
 
 export const router = () => {
   return createBrowserRouter([
@@ -24,7 +25,7 @@ export const router = () => {
         },
         {
           path: "/bookmarks",
-          element: <h1> bookmarks </h1>,
+          element: <Bookmarks />,
         },
       ],
     },
