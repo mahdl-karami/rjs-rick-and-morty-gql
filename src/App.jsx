@@ -8,13 +8,16 @@ import CharacterCard from "./components/CharacterCard";
 //? style modules
 import cardS from "./styles/card.module.css";
 import Pagination from "./components/Pagination";
+import { useState } from "react";
 
 const App = () => {
+  //! states
+  const [page, setPage] = useState(1);
   //! redux test
   const dispatch = useDispatch();
   dispatch(showMeState());
   //! apollo test
-  const { loading, error, data } = useQuery(GET_CHARACTERS(1));
+  const { loading, error, data } = useQuery(GET_CHARACTERS(page));
   console.log({ loading, data, error });
   return (
     <div>
@@ -30,7 +33,7 @@ const App = () => {
               </div>
             ))}
           </div>
-          <Pagination info={data.characters.info} />
+          <Pagination info={data.characters.info} setPage={setPage} />
         </>
       ) : null}
     </div>
