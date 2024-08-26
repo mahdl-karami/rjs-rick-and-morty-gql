@@ -59,3 +59,16 @@
     color: var(--secondText);
   }
 }
+.count {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--secondText);
+  border-radius: 50%;
+  font-size: .8em;
+}
