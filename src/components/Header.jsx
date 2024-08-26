@@ -17,7 +17,7 @@ const Header = () => {
         </Link>
       </span>
       {ids?.length ? <span className={styles.count}>{ids.length}</span> : null}
-      <h1>The Rick and Morty API</h1>
+      <h1>The Rick and Morty</h1>
     </header>
   );
 };
