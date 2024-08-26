@@ -7,13 +7,14 @@ import { GET_CHARACTERS } from "./gql/queries/getCharacters";
 import CharacterCard from "./components/CharacterCard";
 //? style modules
 import cardS from "./styles/card.module.css";
+import Pagination from "./components/Pagination";
 
 const App = () => {
   //! redux test
   const dispatch = useDispatch();
   dispatch(showMeState());
   //! apollo test
-  const { loading, error, data } = useQuery(GET_CHARACTERS(1));
+  const { loading, error, data } = useQuery(GET_CHARACTERS(40));
   console.log({ loading, data, error });
   return (
     <div>
@@ -21,13 +22,16 @@ const App = () => {
       {loading ? <p>loading</p> : null}
       {error ? <p>error</p> : null}
       {data ? (
-        <div className="characters">
-          {data.characters.results.map((character, index) => (
-            <div key={index} className={cardS.card}>
-              <CharacterCard character={character} />
-            </div>
-          ))}
-        </div>
+        <>
+          <div className="characters">
+            {data.characters.results.map((character, index) => (
+              <div key={index} className={cardS.card}>
+                <CharacterCard character={character} />
+              </div>
+            ))}
+          </div>
+          <Pagination info={data.characters.info} />
+        </>
       ) : null}
     </div>
   );
