@@ -14,7 +14,7 @@ const App = () => {
   const dispatch = useDispatch();
   dispatch(showMeState());
   //! apollo test
-  const { loading, error, data } = useQuery(GET_CHARACTERS(40));
+  const { loading, error, data } = useQuery(GET_CHARACTERS(1));
   console.log({ loading, data, error });
   return (
     <div>

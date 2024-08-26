@@ -1,0 +1,31 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 2rem 0 3rem;
+}
+.pagination button {
+  background: transparent;
+  color: var(--mainText);
+  border: var(--secondText) 1px solid;
+  border-radius: 5px;
+  font-size: 1em;
+  min-width: 30px;
+  min-height: 30px;
+  padding: 0.2rem;
+}
+.pagination button:not(.disable) {
+  cursor: pointer;
+  transition: background linear 0.3s;
+  &:hover {
+    background: var(--secondText);
+  }
+}
+.pagination button:nth-child(2) {
+  background: var(--secondText);
+}
+.disable {
+  opacity: 70%;
+  cursor: not-allowed;
+}
