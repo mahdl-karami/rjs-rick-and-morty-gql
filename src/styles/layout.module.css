@@ -1,6 +1,6 @@
 .header {
   min-height: 40vh;
-  background: url(/public/hero_image.png) center/cover;
+  background: url(/hero_image.png) center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
