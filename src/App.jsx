@@ -22,7 +22,7 @@ const App = () => {
       dispatch(getLocalIds(JSON.parse(localStorage.getItem("ids"))));
     }
   }, []);
-  //! apollo-gql
+  //! apollo client
   const { loading, error, data } = useQuery(GET_CHARACTERS(page));
   console.log({ loading, data, error });
   return (

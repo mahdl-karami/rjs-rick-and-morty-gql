@@ -1,16 +1,19 @@
+//? hooks
 import { useQuery } from "@apollo/client";
-import { useSelector } from "react-redux";
+//? apollo-gql
 import { getCharactersById } from "../gql/queries/getCharactersById";
+//? components
 import CharacterCard from "../components/CharacterCard";
+//? styles
 import cardS from "../styles/card.module.css";
 
 const Bookmarks = () => {
-  const { ids } = useSelector((state) => state.bookmarks);
+  //! get ids from localstorage
+  let ids = JSON.parse(localStorage.getItem("ids"));
   //! apollo client
-  if (ids.length) {
+  if (ids?.length) {
     var { loading, error, data } = useQuery(getCharactersById(ids));
   }
-  console.log(data);
   return (
     <div>
       <h2 className="title">Bookmarked Characters</h2>
