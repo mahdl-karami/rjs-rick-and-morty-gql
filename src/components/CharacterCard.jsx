@@ -6,13 +6,33 @@ import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { FaCircle } from "react-icons/fa";
 //? router
 import { Link } from "react-router-dom";
+//? hooks
+import { useDispatch, useSelector } from "react-redux";
+//? actions
+import { add, remove } from "../app/features/bookmarkSlice";
 
 const CharacterCard = ({ character }) => {
-  const bookmarked = false;
+  //! props
   const { id, name, image, status, species, location, episode } = character;
+  //! redux
+  const { ids } = useSelector((state) => state.bookmarks);
+  const dispatch = useDispatch();
+  //! states
+  const bookmarked = false;
+  const isBookmarked = ids.filter((value) => value == id);
+  //! functions
+  const bookmarkHandler = () => {
+    if (isBookmarked?.length) {
+      dispatch(remove(id));
+    } else {
+      dispatch(add(id));
+    }
+  };
   return (
     <>
-      <span className={bookmark + " " + bookmarked}>{bookmarked ? <FaBookmark /> : <FaRegBookmark />}</span>
+      <span className={bookmark + " " + bookmarked} onClick={(ev) => bookmarkHandler()}>
+        {isBookmarked?.length ? <FaBookmark /> : <FaRegBookmark />}
+      </span>
       <img src={image} alt={name + " image"} />
       <div className={flex}>
         <span>
