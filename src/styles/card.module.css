@@ -26,6 +26,7 @@
   opacity: 70%;
 }
 .bookmark {
+  color: var(--mainText);
   position: absolute;
   top: 5px;
   right: 5px;
@@ -35,4 +36,7 @@
   &:hover {
     color: var(--secondText);
   }
+}
+.bookmarked {
+  color: var(--secondText);
 }

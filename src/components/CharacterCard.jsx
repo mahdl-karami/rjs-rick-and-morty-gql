@@ -1,6 +1,6 @@
 //? style modules
 import styles from "../styles/card.module.css";
-const { flex, align, fade, bookmark } = styles;
+const { flex, align, fade, bookmark, bookmarked } = styles;
 //? icons
 import { FaBookmark, FaRegBookmark } from "react-icons/fa6";
 import { FaCircle } from "react-icons/fa";
@@ -18,7 +18,6 @@ const CharacterCard = ({ character }) => {
   const { ids } = useSelector((state) => state.bookmarks);
   const dispatch = useDispatch();
   //! states
-  const bookmarked = false;
   const isBookmarked = ids.filter((value) => value == id);
   //! functions
   const bookmarkHandler = () => {
@@ -30,7 +29,7 @@ const CharacterCard = ({ character }) => {
   };
   return (
     <>
-      <span className={bookmark + " " + bookmarked} onClick={(ev) => bookmarkHandler()}>
+      <span className={bookmark + ` ${isBookmarked.length ? bookmarked : ""}`} onClick={(ev) => bookmarkHandler()}>
         {isBookmarked?.length ? <FaBookmark /> : <FaRegBookmark />}
       </span>
       <img src={image} alt={name + " image"} />
