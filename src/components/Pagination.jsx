@@ -26,7 +26,9 @@ const Pagination = ({ info: { prev, next, pages }, setPage }) => {
   return (
     <div className={styles.pagination} onClick={(ev) => clickHandler(ev)}>
       {/* //! prev */}
-      <button name="prev">Prev</button>
+      <button name="prev" className={activePage == 1 ? styles.disable : null}>
+        Prev
+      </button>
       {/* //! 1 and 2 pages for comback */}
       {activePage >= 3 ? (
         <>
@@ -37,14 +39,20 @@ const Pagination = ({ info: { prev, next, pages }, setPage }) => {
       {/* //! dynamic nubmers */}
       {buttons.map((btn, index) => {
         if (btn < pages - 1) {
-          return <button key={index}>{btn}</button>;
+          return (
+            <button className={activePage == btn ? styles.active : null} key={index}>
+              {btn}
+            </button>
+          );
         }
       })}
       {/* //! two last page */}
-      <button>{pages - 1}</button>
-      <button>{pages}</button>
+      <button className={activePage == pages - 1 ? styles.active : null}>{pages - 1}</button>
+      <button className={activePage == pages ? styles.active : null}>{pages}</button>
       {/* //! next */}
-      <button name="next">next</button>
+      <button name="next" className={activePage == pages ? styles.disable : null}>
+        next
+      </button>
     </div>
   );
 };

@@ -26,3 +26,6 @@
   opacity: 70%;
   cursor: not-allowed;
 }
+.active {
+  background: var(--secondText) !important;
+}
