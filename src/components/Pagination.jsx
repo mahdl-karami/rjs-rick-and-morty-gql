@@ -15,10 +15,10 @@ const Pagination = ({ info: { prev, next, pages }, setPage }) => {
       }
       if (name) {
         if (name == "prev" && activePage > 1) {
-          setPage((prevS) => prevS - 1);
+          setPage((prevS) => +prevS - 1);
         }
         if (name == "next" && activePage < pages) {
-          setPage((prevS) => prevS + 1);
+          setPage((prevS) => +prevS + 1);
         }
       }
     }
