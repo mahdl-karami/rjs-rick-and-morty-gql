@@ -1,0 +1,16 @@
+@media only screen and (max-width: 1200px) {
+  .characters {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1.5rem 1.5rem;
+    grid-template-areas: ". .";
+  }
+}
+@media only screen and (max-width: 650px) {
+  .characters {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.5rem 0;
+    grid-template-areas: ".";
+  }
+}

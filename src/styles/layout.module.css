@@ -70,5 +70,36 @@
   justify-content: center;
   background: var(--secondText);
   border-radius: 50%;
-  font-size: .8em;
+  font-size: 0.8em;
+}
+
+/*! fucking responsive */
+@media only screen and (max-width: 1500px) {
+  .header {
+    min-height: 35vh;
+    h2 {
+      font-size: 5em;
+    }
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .header {
+    min-height: 30vh;
+    h1 {
+      font-size: 4em;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .header {
+    min-height: 25vh;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .header {
+    min-height: 20vh;
+    h1 {
+      font-size: 2em;
+    }
+  }
 }

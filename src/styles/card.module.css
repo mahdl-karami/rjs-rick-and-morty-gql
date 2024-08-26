@@ -40,3 +40,20 @@
 .bookmarked {
   color: var(--secondText);
 }
+
+/*! fucking responsive */
+@media only screen and (max-width: 1500px) {
+  .card {
+    height: 130px;
+    font-size: 90%;
+    img {
+      width: 130px;
+      height: 130px;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .card {
+    font-size: 75%;
+  }
+}

@@ -1,5 +1,6 @@
 import { createRoot } from "react-dom/client";
 import "./global.css";
+import "./global_responsive.css";
 
 //! redux
 import { Provider } from "react-redux";
