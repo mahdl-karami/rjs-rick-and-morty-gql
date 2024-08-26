@@ -14,16 +14,23 @@
   min-width: 30px;
   min-height: 30px;
   padding: 0.2rem;
+  transition: all linear 0.3s;
+}
+.pagination button:nth-last-child(1),
+.pagination button:nth-child(1) {
+  background: var(--secondText);
+  &:not(.disable):hover {
+    opacity: 80%;
+  }
 }
 .pagination button:not(.disable) {
   cursor: pointer;
-  transition: background linear 0.3s;
   &:hover {
     background: var(--secondText);
   }
 }
 .disable {
-  opacity: 70%;
+  opacity: 50%;
   cursor: not-allowed;
 }
 .active {
