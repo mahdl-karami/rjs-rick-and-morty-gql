@@ -22,9 +22,6 @@
     background: var(--secondText);
   }
 }
-.pagination button:nth-child(2) {
-  background: var(--secondText);
-}
 .disable {
   opacity: 70%;
   cursor: not-allowed;

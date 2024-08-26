@@ -12,7 +12,7 @@ import { useState } from "react";
 
 const App = () => {
   //! states
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(42);
   //! redux test
   const dispatch = useDispatch();
   dispatch(showMeState());
