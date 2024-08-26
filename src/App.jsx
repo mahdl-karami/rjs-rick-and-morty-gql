@@ -1,6 +1,6 @@
 //? redux
-import { useDispatch } from "react-redux";
-import { showMeState } from "./app/features/bookmarkSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { add, getLocalIds, showMeState } from "./app/features/bookmarkSlice";
 //? apollo-gql
 import { useQuery } from "@apollo/client";
 import { GET_CHARACTERS } from "./gql/queries/getCharacters";
@@ -8,15 +8,21 @@ import CharacterCard from "./components/CharacterCard";
 //? style modules
 import cardS from "./styles/card.module.css";
 import Pagination from "./components/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   //! states
   const [page, setPage] = useState(1);
-  //! redux test
+  //! redux
+  const { ids } = useSelector((state) => state.bookmarks);
   const dispatch = useDispatch();
-  dispatch(showMeState());
-  //! apollo test
+  //! localstorage
+  useEffect(() => {
+    if (!ids?.length) {
+      dispatch(getLocalIds(JSON.parse(localStorage.getItem("ids"))));
+    }
+  }, []);
+  //! apollo-gql
   const { loading, error, data } = useQuery(GET_CHARACTERS(page));
   console.log({ loading, data, error });
   return (
