@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Layout from "../pages/Layout";
 import Bookmarks from "../pages/Bookmarks";
+import Locations from "../pages/Locations";
 
 export const router = () => {
   return createBrowserRouter([
@@ -14,6 +15,10 @@ export const router = () => {
         {
           path: "/",
           element: <App />,
+        },
+        {
+          path: "/locations/:locId",
+          element: <Locations />,
         },
         {
           path: "/locations",

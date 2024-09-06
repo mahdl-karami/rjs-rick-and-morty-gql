@@ -45,7 +45,7 @@ const CharacterCard = ({ character }) => {
         </span>
         <span>
           <p className={fade}>Last known location:</p>
-          <Link to={`/`}>{location.name}</Link>
+          <Link to={`/locations/${location?.id}`}>{location.name}</Link>
         </span>
         <span>
           <p className={fade}>First seen in:</p>
