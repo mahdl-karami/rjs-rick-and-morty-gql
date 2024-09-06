@@ -14,6 +14,7 @@ import { add, remove } from "../app/features/bookmarkSlice";
 const CharacterCard = ({ character }) => {
   //! props
   const { id, name, image, status, species, location, episode } = character;
+  console.log(episode)
   //! redux
   const { ids } = useSelector((state) => state.bookmarks);
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const CharacterCard = ({ character }) => {
         </span>
         <span>
           <p className={fade}>First seen in:</p>
-          <Link to={`/`}>{episode[0].name}</Link>
+          <Link to={`/episodes/${episode[0]?.id}`}>{episode[0].name}</Link>
         </span>
       </div>
     </>
