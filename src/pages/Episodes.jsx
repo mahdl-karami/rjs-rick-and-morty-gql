@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { getEpisodes } from "../gql/queries/getEpisodes";
 //? components
 import CharacterCard from "../components/CharacterCard";
+import Loading from "../components/Loading";
 //? styles
 import cardS from "../styles/card.module.css";
 //? redux
@@ -28,7 +29,7 @@ const Episodes = () => {
   return (
     <div>
       <h2 className="title">Episode : {data?.episode?.name}</h2>
-      {loading ? <p>loading</p> : null}
+      {loading ? <Loading /> : null}
       {error ? <p>error</p> : null}
       {data ? (
         <>

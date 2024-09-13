@@ -9,6 +9,7 @@ import CharacterCard from "./components/CharacterCard";
 import cardS from "./styles/card.module.css";
 //? components
 import Pagination from "./components/Pagination";
+import Loading from "./components/Loading";
 //? hooks
 import { useEffect, useState } from "react";
 
@@ -29,7 +30,7 @@ const App = () => {
   return (
     <div>
       <h2 className="title">All Characters</h2>
-      {loading ? <p>loading</p> : null}
+      {loading ? <Loading /> : null}
       {error ? <p>error</p> : null}
       {data ? (
         <>

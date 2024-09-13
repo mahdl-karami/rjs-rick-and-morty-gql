@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { getCharactersById } from "../gql/queries/getCharactersById";
 //? components
 import CharacterCard from "../components/CharacterCard";
+import Loading from "../components/Loading";
 //? styles
 import cardS from "../styles/card.module.css";
 
@@ -17,7 +18,7 @@ const Bookmarks = () => {
   return (
     <div>
       <h2 className="title">Bookmarked Characters</h2>
-      {loading ? <p>loading</p> : null}
+      {loading ? <Loading /> : null}
       {error ? <p>error</p> : null}
       {data ? (
         <>
