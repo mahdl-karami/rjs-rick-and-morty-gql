@@ -31,6 +31,7 @@ const Bookmarks = () => {
           </div>
         </>
       ) : null}
+      <div className="bookmarkSpace"></div>
     </div>
   );
 };
